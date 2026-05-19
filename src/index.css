@@ -1,0 +1,368 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/geist";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: 'Geist Variable', sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+    --background: oklch(0.98 0.01 240);
+    --foreground: oklch(0.1 0.02 240);
+    --card: oklch(1 0 0);
+    --card-foreground: oklch(0.1 0.02 240);
+    --popover: oklch(1 0 0);
+    --popover-foreground: oklch(0.1 0.02 240);
+    --primary: oklch(0.55 0.22 260);
+    --primary-foreground: oklch(0.98 0.01 240);
+    --secondary: oklch(0.95 0.01 240);
+    --secondary-foreground: oklch(0.1 0.02 240);
+    --muted: oklch(0.95 0.01 240);
+    --muted-foreground: oklch(0.4 0.02 240);
+    --accent: oklch(0.55 0.22 260 / 0.1);
+    --accent-foreground: oklch(0.55 0.22 260);
+    --destructive: oklch(0.6 0.2 30);
+    --border: oklch(0.9 0.01 240);
+    --input: oklch(0.9 0.01 240);
+    --ring: oklch(0.55 0.22 260);
+    --radius: 0.75rem;
+}
+
+.dark {
+    --background: oklch(0.08 0.02 240);
+    --foreground: oklch(0.98 0.01 240);
+    --card: oklch(0.12 0.02 240);
+    --card-foreground: oklch(0.98 0.01 240);
+    --popover: oklch(0.12 0.02 240);
+    --popover-foreground: oklch(0.98 0.01 240);
+    --primary: oklch(0.60 0.20 260);
+    --primary-foreground: oklch(0.1 0.02 240);
+    --secondary: oklch(0.25 0.05 240);
+    --secondary-foreground: oklch(0.98 0.01 240);
+    --muted: oklch(0.2 0.03 240);
+    --muted-foreground: oklch(0.7 0.02 240);
+    --accent: oklch(0.60 0.20 260 / 0.15);
+    --accent-foreground: oklch(0.60 0.20 260);
+    --destructive: oklch(0.55 0.2 30);
+    --border: oklch(0.2 0.03 240);
+    --input: oklch(0.2 0.03 240);
+    --ring: oklch(0.60 0.20 260);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground antialiased selection:bg-primary/30 selection:text-primary;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/70 dark:bg-white/5 backdrop-blur-md border border-black/5 dark:border-white/10;
+  }
+  .glass-dark {
+    @apply bg-white/80 dark:bg-black/40 backdrop-blur-xl border border-black/10 dark:border-white/5;
+  }
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground to-foreground/40;
+  }
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-blue-500 to-indigo-500;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-muted rounded-full border-2 border-background hover:bg-muted-foreground transition-colors;
+}
+
+/* Grid Background */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  @apply text-foreground/5;
+}
+
+/* Logo dark mode treatment */
+.dark img[src*="agcube-logo"] {
+  mix-blend-mode: normal !important;
+  filter: brightness(1.1) contrast(1.1);
+}
+
+/* 3D BootLoader Cube */
+.loader-cube-container {
+  perspective: 1000px;
+}
+.loader-cube {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  transform-style: preserve-3d;
+}
+.loader-cube-face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  background: rgba(37, 99, 235, 0.15); /* blue-600/15 */
+  border: 2px solid rgba(59, 130, 246, 0.4); /* blue-500/40 */
+  backdrop-filter: blur(4px);
+}
+.loader-cube-front  { transform: translateZ(50px); }
+.loader-cube-back   { transform: rotateY(180deg) translateZ(50px); }
+.loader-cube-right  { transform: rotateY(90deg) translateZ(50px); }
+.loader-cube-left   { transform: rotateY(-90deg) translateZ(50px); }
+.loader-cube-top    { transform: rotateX(90deg) translateZ(50px); }
+.loader-cube-bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+/* ─── Article Body Prose ──────────────────────────────────────────────────── */
+.article-body {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--muted-foreground);
+}
+
+/* H2 — Section Title */
+.article-body h2 {
+  position: relative;
+  font-size: 1.625rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: var(--foreground);
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.625rem;
+}
+.article-body h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 2.5rem;
+  height: 2px;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, var(--primary), color-mix(in oklch, var(--primary) 0%, transparent));
+}
+
+/* H3 — Subtitle / Sub-section */
+.article-body h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--accent-foreground);
+  margin-top: 2rem;
+  margin-bottom: 0.625rem;
+}
+
+/* H4 */
+.article-body h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--primary);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Paragraph */
+.article-body p {
+  margin-bottom: 1.375rem;
+}
+
+/* Ordered & Unordered Lists */
+.article-body ul,
+.article-body ol {
+  margin-bottom: 1.375rem;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.article-body ul li,
+.article-body ol li {
+  position: relative;
+  padding-left: 1.75rem;
+  color: var(--muted-foreground);
+}
+
+/* Custom bullet — glowing blue dot */
+.article-body ul li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 6px color-mix(in oklch, var(--primary) 60%, transparent);
+}
+
+/* Numbered list counter */
+.article-body ol {
+  counter-reset: article-counter;
+}
+.article-body ol li {
+  counter-increment: article-counter;
+}
+.article-body ol li::before {
+  content: counter(article-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  line-height: 1.85;
+  width: 1.25rem;
+  text-align: right;
+}
+
+/* Blockquote */
+.article-body blockquote {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  border-radius: 0 0.75rem 0.75rem 0;
+  border-left: 3px solid var(--primary);
+  background: color-mix(in oklch, var(--primary) 6%, transparent);
+  color: var(--foreground);
+  font-size: 1.125rem;
+  font-weight: 500;
+  font-style: normal;
+  line-height: 1.65;
+}
+.article-body blockquote::before {
+  content: '\201C';
+  position: absolute;
+  top: -0.25rem;
+  left: 0.875rem;
+  font-size: 3.5rem;
+  line-height: 1;
+  color: color-mix(in oklch, var(--primary) 30%, transparent);
+  font-family: Georgia, serif;
+}
+
+/* Inline code */
+.article-body code {
+  font-family: 'Geist Variable', ui-monospace, monospace;
+  font-size: 0.875em;
+  padding: 0.15em 0.45em;
+  border-radius: 0.35rem;
+  background: color-mix(in oklch, var(--primary) 10%, transparent);
+  color: var(--accent-foreground);
+  border: 1px solid color-mix(in oklch, var(--primary) 15%, transparent);
+}
+
+/* Code block */
+.article-body pre {
+  margin: 1.75rem 0;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.875rem;
+  background: var(--muted);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+.article-body pre code {
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+}
+
+/* Strong / Bold */
+.article-body strong {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+/* Horizontal rule */
+.article-body hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2.5rem 0;
+}
+
+/* Links */
+.article-body a {
+  color: var(--primary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: color-mix(in oklch, var(--primary) 40%, transparent);
+  transition: color 0.2s, text-decoration-color 0.2s;
+}
+.article-body a:hover {
+  color: var(--accent-foreground);
+  text-decoration-color: color-mix(in oklch, var(--accent-foreground) 70%, transparent);
+}
+
+/* First paragraph after h2 — slight emphasis */
+.article-body h2 + p,
+.article-body h3 + p {
+  color: var(--foreground);
+  opacity: 0.85;
+}
+
