@@ -1,21 +1,9 @@
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export function Hero() {
-  const [isRequesting, setIsRequesting] = useState(false);
-  const navigate = useNavigate();
-
-  const handleRequestDemo = () => {
-    setIsRequesting(true);
-    // Simulate a small delay for the loading effect
-    setTimeout(() => {
-      navigate('/contact');
-    }, 1200);
-  };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
@@ -55,14 +43,11 @@ export function Hero() {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4"
           >
-            <Button 
-              onClick={handleRequestDemo}
-              loading={isRequesting}
-              size="lg" 
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-base rounded-full group"
-            >
-              Request Demo
-              {!isRequesting && <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />}
+            <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 h-14 text-base rounded-full group">
+              <Link to="/industries">
+                See It In Action
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
             </Button>
             <Button asChild variant="outline" size="lg" className="border-border hover:bg-muted text-foreground px-8 h-14 text-base rounded-full">
               <Link to="/advisory">
