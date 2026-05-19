@@ -67,6 +67,9 @@ export function Footer() {
           <p className="text-muted-foreground text-xs">
             © {new Date().getFullYear()} AG Cube. All rights reserved.
           </p>
+          <p className="text-muted-foreground text-xs">
+            Site Designed and Maintained by Botifyx
+          </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Privacy Policy</Link>
             <Link to="/terms-of-service" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Terms of Service</Link>
