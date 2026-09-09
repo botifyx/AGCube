@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en" class="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,7 +10,7 @@
     <meta name="description" content="AG Cube — Where Strategy Meets Execution Intelligence. Bridging CX, AI, and Supply Chain advisory with scalable tech solutions." />
     <meta name="author" content="AG Cube" />
     <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#0d1117" />
+    <meta name="theme-color" content="#ffffff" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -33,11 +33,16 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <!-- Prevent white flash before React/Tailwind loads -->
+    <!-- Default Light Theme Background to prevent flash -->
     <style>
       html, body { 
-        background: #07090e; 
+        background: #ffffff; 
+        color: #0f172a;
         font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      }
+      html.dark, html.dark body { 
+        background: #07090e; 
+        color: #f8fafc;
       }
     </style>
   </head>

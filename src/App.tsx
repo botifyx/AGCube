@@ -37,7 +37,7 @@ export default function App() {
   };
 
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="ag-cube-theme">
+    <ThemeProvider defaultTheme="light" storageKey="ag-cube-theme">
       <Router>
         <ScrollToTop />
         <AnimatePresence mode="wait">
