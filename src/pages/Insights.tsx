@@ -83,6 +83,9 @@ export default function Insights() {
                     alt={article.title}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/images/articles/ai-driven-putaway.jpg';
+                    }}
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-blue-500/80 text-white backdrop-blur-md border-none">

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 220" width="100%" height="100%">
+  <defs>
+    <filter id="subtle-glow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+  
+  <!-- Interlocking geometric icon -->
+  <g transform="translate(195, 10)">
+    <!-- Orange upper interlocking piece -->
+    <path d="M 0 0 L 110 0 L 110 52 L 62 52 L 62 90 L 0 90 Z" fill="#F57C00" />
+    <!-- Grey lower interlocking piece with separation gap -->
+    <path d="M 0 102 L 48 102 L 48 64 L 110 64 L 110 142 L 0 142 Z" fill="#5A5B5E" />
+  </g>
+
+  <!-- Wordmark -->
+  <!-- "CLASSIC" in Orange -->
+  <text x="25" y="182" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="700" letter-spacing="4" fill="#F57C00">CLASSIC</text>
+
+  <!-- "WMS" in Slate Grey -->
+  <text x="275" y="182" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="52" font-weight="700" letter-spacing="4" fill="#5A5B5E">WMS</text>
+
+  <!-- Registered trademark symbol -->
+  <text x="438" y="152" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="500" fill="#5A5B5E">®</text>
+
+  <!-- Tagline: * ROBUST CHAINED AUTOMATION * -->
+  <text x="250" y="210" text-anchor="middle" font-family="system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="15" font-weight="600" letter-spacing="7" fill="#71717A">
+    * ROBUST CHAINED AUTOMATION *
+  </text>
+</svg>

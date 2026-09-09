@@ -73,6 +73,9 @@ export default function ArticleDetail() {
               alt={article.title}
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
+              onError={(e) => {
+                (e.target as HTMLImageElement).src = '/images/articles/ai-driven-putaway.jpg';
+              }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent pointer-events-none" />
           </div>

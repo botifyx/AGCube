@@ -4,29 +4,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Badge } from '@/components/ui/badge';
 import { ArrowRight, Calendar } from 'lucide-react';
 
-const articles = [
-  {
-    title: 'AI-Driven Putaway & Warehouse Optimization',
-    excerpt: 'How predictive algorithms are transforming traditional warehouse layouts and increasing throughput by 25%.',
-    category: 'Logistics',
-    date: 'Oct 12, 2025',
-    image: 'https://picsum.photos/seed/warehouse/800/600',
-  },
-  {
-    title: 'AI-Native Marketing Operations',
-    excerpt: 'The shift from manual campaign management to automated, intelligence-led marketing ecosystems.',
-    category: 'Marketing',
-    date: 'Sep 28, 2025',
-    image: 'https://picsum.photos/seed/marketing/800/600',
-  },
-  {
-    title: 'Lite vs Enterprise WMS Comparison',
-    excerpt: 'A comprehensive guide to choosing the right warehouse management scale for your current operations.',
-    category: 'Product',
-    date: 'Sep 15, 2025',
-    image: 'https://picsum.photos/seed/tech/800/600',
-  },
-];
+import { articles } from '@/data/articles';
 
 export function InsightsPreview() {
   return (
@@ -59,7 +37,7 @@ export function InsightsPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {articles.map((article, index) => (
+          {articles.slice(0, 3).map((article, index) => (
             <motion.div
               key={article.title}
               initial={{ opacity: 0, y: 20 }}
@@ -74,6 +52,9 @@ export function InsightsPreview() {
                     alt={article.title}
                     className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/images/articles/ai-driven-putaway.jpg';
+                    }}
                   />
                   <div className="absolute top-4 left-4">
                     <Badge className="bg-blue-500/80 text-white backdrop-blur-md border-none">
@@ -96,7 +77,7 @@ export function InsightsPreview() {
                   </p>
                 </CardContent>
                 <CardFooter className="pt-0">
-                  <Link to="/insights" className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-2 group/link">
+                  <Link to={`/insights/${article.id}`} className="text-xs font-semibold text-foreground uppercase tracking-wider flex items-center gap-2 group/link">
                     Read Article
                     <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />
                   </Link>

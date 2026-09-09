@@ -68,7 +68,15 @@ export function Footer() {
             © {new Date().getFullYear()} AG Cube. All rights reserved.
           </p>
           <p className="text-muted-foreground text-xs">
-            Site Designed and Maintained by Botifyx
+            <a
+              href="https://www.botifyx.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors inline-flex items-center gap-1 group"
+            >
+              <span>Site Designed and Maintained by</span>
+              <span className="font-semibold text-foreground group-hover:text-blue-600 dark:group-hover:text-blue-400 underline decoration-muted-foreground/40 group-hover:decoration-blue-500 underline-offset-2">Botifyx</span>
+            </a>
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy-policy" className="text-muted-foreground hover:text-foreground text-xs transition-colors">Privacy Policy</Link>

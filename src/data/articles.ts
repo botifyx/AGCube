@@ -16,7 +16,7 @@ export const articles: Article[] = [
     excerpt: 'How predictive algorithms are transforming traditional warehouse layouts and increasing throughput by 25%.',
     category: 'Logistics',
     date: 'Oct 12, 2025',
-    image: 'https://images.pexels.com/photos/4483775/pexels-photo-4483775.jpeg?auto=format&fit=crop&q=80',
+    image: '/images/articles/ai-driven-putaway.jpg',
     readTime: '8 min read',
     content: `
       <h2>The Shift from Static to Dynamic Routing</h2>
@@ -45,7 +45,7 @@ export const articles: Article[] = [
     excerpt: 'The shift from manual campaign management to automated, intelligence-led marketing ecosystems.',
     category: 'Marketing',
     date: 'Sep 28, 2025',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+    image: '/images/articles/ai-native-marketing.jpg',
     readTime: '6 min read',
     content: `
       <h2>Beyond Basic Automation</h2>
@@ -69,7 +69,7 @@ export const articles: Article[] = [
     excerpt: 'A comprehensive guide to choosing the right warehouse management scale for your current operations.',
     category: 'Strategy',
     date: 'Sep 15, 2025',
-    image: 'https://images.unsplash.com/photo-1566576721346-d4a3b4eaeb55?auto=format&fit=crop&q=80',
+    image: '/images/articles/lite-vs-enterprise-wms.jpg',
     readTime: '12 min read',
     content: `
       <h2>The Scaling Dilemma</h2>
@@ -101,7 +101,7 @@ export const articles: Article[] = [
     excerpt: 'Moving beyond reactive customer service to proactive, AI-driven engagement models.',
     category: 'AI & Data',
     date: 'Aug 30, 2025',
-    image: 'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80',
+    image: '/images/articles/future-of-cx.jpg',
     readTime: '10 min read',
     content: `
       <h2>The End of Reactive Support</h2>
@@ -120,7 +120,7 @@ export const articles: Article[] = [
     excerpt: 'Building flexible execution systems that can withstand global disruptions.',
     category: 'Strategy',
     date: 'Aug 12, 2025',
-    image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?auto=format&fit=crop&q=80',
+    image: '/images/articles/supply-chain-resilience.jpg',
     readTime: '7 min read',
     content: `
       <h2>The Fragility of 'Just-In-Time'</h2>
@@ -144,7 +144,7 @@ export const articles: Article[] = [
     excerpt: 'How sensors and beacons are providing granular visibility into every movement.',
     category: 'Logistics',
     date: 'Jul 25, 2025',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80',
+    image: '/images/articles/iot-warehouse.jpg',
     readTime: '9 min read',
     content: `
       <h2>The Evolution of Warehouse Tracking</h2>
