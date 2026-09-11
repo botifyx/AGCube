@@ -30,6 +30,15 @@ export default function ClassicWMS() {
                 </div>
               </div>
 
+              <div className="mb-8 flex items-center justify-center">
+                <div className="inline-flex items-center justify-center px-8 py-5 rounded-2xl bg-white shadow-xl shadow-orange-500/10 border border-orange-500/25">
+                  <img
+                    src="/classic-wms-logo-full.png"
+                    alt="Classic WMS"
+                    className="h-16 sm:h-20 w-auto object-contain"
+                  />
+                </div>
+              </div>
 
               <h1 className="text-4xl md:text-6xl font-black tracking-tight text-foreground font-heading leading-[1.1]">
                 Classic <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 dark:from-orange-400 dark:to-amber-500">WMS</span>
