@@ -1,19 +1,18 @@
 import { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
-  Network, 
-  Activity, 
-  Bot, 
-  LayoutDashboard, 
-  RefreshCw, 
-  Crosshair, 
-  Sparkles, 
+import {
+  Network,
+  Activity,
+  Bot,
+  LayoutDashboard,
+  RefreshCw,
+  Crosshair,
+  Sparkles,
   ArrowRight,
   ShieldCheck,
   CheckCircle2,
   Radio,
-  SlidersHorizontal,
-  ChevronRight
+  SlidersHorizontal
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
@@ -26,7 +25,6 @@ interface CognitiveItem {
   bullets: string[];
   icon: typeof Network;
   statusTag: string;
-  liveMetric: string;
 }
 
 const cognitiveCapabilities: CognitiveItem[] = [
@@ -38,8 +36,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
       'AI Business Digital Twin, which simulates warehouse scenarios and forecasts ROI, CapEx, OpEx, capacity utilization, throughput, and revenue impact before investment decisions are made.'
     ],
     icon: Network,
-    statusTag: 'Dynamic Emulation',
-    liveMetric: 'Sub-second sync across 500k+ SKUs'
+    statusTag: 'Dynamic Emulation'
   },
   {
     id: 'zone-efficiency',
@@ -49,8 +46,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
       'The AI Zone Efficiency Engine continuously identifies operational bottlenecks, inefficient warehouse zones, and productivity opportunities using real-time execution data.'
     ],
     icon: Activity,
-    statusTag: 'Autonomous Slotting',
-    liveMetric: '42% reduced picker transit distance'
+    statusTag: 'Autonomous Slotting'
   },
   {
     id: 'ai-assistant',
@@ -60,8 +56,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
       'The AI Assistant delivers intelligent operational insights and AI-driven recommendations through natural language, helping teams make faster and more informed decisions.'
     ],
     icon: Bot,
-    statusTag: 'Conversational Ops',
-    liveMetric: 'Hands-free voice & RF terminal queries'
+    statusTag: 'Conversational Ops'
   },
   {
     id: 'command-center',
@@ -71,8 +66,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
       'The Command Center provides a centralized executive view with real-time visibility into inventory, operations, workforce productivity, KPIs, and critical exceptions.'
     ],
     icon: LayoutDashboard,
-    statusTag: 'Unified Telemetry',
-    liveMetric: '360° global multi-node visibility'
+    statusTag: 'Unified Telemetry'
   },
   {
     id: 'self-healing',
@@ -82,19 +76,17 @@ const cognitiveCapabilities: CognitiveItem[] = [
       'Automated Self-Healing detects operational anomalies and process deviations, proactively recommending or initiating corrective actions to help maintain uninterrupted performance.'
     ],
     icon: RefreshCw,
-    statusTag: 'Fault Tolerance',
-    liveMetric: '99.99% automated exception resolution'
+    statusTag: 'Fault Tolerance'
   },
   {
     id: 'asset-visibility',
     num: '06',
-    title: 'Indoor Asset Visibility',
+    title: 'Indoor Positioning System',
     bullets: [
       'The Indoor Positioning System enables real-time location awareness of personnel, equipment, and assets, helping optimize task allocation, movement, and overall warehouse productivity.'
     ],
     icon: Crosshair,
-    statusTag: 'RTLS & BLE Beacons',
-    liveMetric: '±0.5m indoor positioning accuracy'
+    statusTag: 'RTLS & BLE Beacons'
   }
 ];
 
@@ -111,7 +103,7 @@ export function CognitiveCapabilities() {
 
       <div className="container mx-auto px-4 md:px-6 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          
+
           {/* Left Column: Stylized Title Matching Global Standards */}
           <div className="lg:col-span-4 space-y-6 lg:sticky lg:top-32">
             <motion.div
@@ -141,7 +133,7 @@ export function CognitiveCapabilities() {
               </p>
 
               <div className="pt-4 flex flex-col sm:flex-row gap-3">
-                <Button 
+                <Button
                   asChild
                   className="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold rounded-xl shadow-lg shadow-cyan-500/25 h-12 px-6 group"
                 >
@@ -180,22 +172,20 @@ export function CognitiveCapabilities() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.4, delay: index * 0.08 }}
                     onClick={() => setActiveItem(item.id)}
-                    className={`relative rounded-2xl p-6 transition-all duration-300 cursor-pointer overflow-hidden border backdrop-blur-xl group ${
-                      isSelected
-                        ? 'bg-card dark:bg-gradient-to-br dark:from-cyan-950/40 dark:via-zinc-900/90 dark:to-blue-950/30 border-cyan-500/60 shadow-[0_0_30px_rgba(6,182,212,0.15)] ring-1 ring-cyan-500/30'
-                        : 'bg-card/70 dark:bg-zinc-950/60 border-border dark:border-zinc-800/80 hover:border-cyan-500/40 hover:bg-card dark:hover:bg-zinc-900/70 shadow-sm'
-                    }`}
+                    className={`relative rounded-2xl p-6 transition-all duration-300 cursor-pointer overflow-hidden border backdrop-blur-xl group ${isSelected
+                      ? 'bg-card dark:bg-gradient-to-br dark:from-cyan-950/40 dark:via-zinc-900/90 dark:to-blue-950/30 border-cyan-500/60 shadow-[0_0_30px_rgba(6,182,212,0.15)] ring-1 ring-cyan-500/30'
+                      : 'bg-card/70 dark:bg-zinc-950/60 border-border dark:border-zinc-800/80 hover:border-cyan-500/40 hover:bg-card dark:hover:bg-zinc-900/70 shadow-sm'
+                      }`}
                   >
                     {/* Top Status Bar with Module Tag */}
                     <div className="flex items-center justify-between mb-4">
                       <span className="text-[10px] font-bold font-mono tracking-wider uppercase px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
                         {item.statusTag}
                       </span>
-                      <div className={`p-2 rounded-xl transition-all ${
-                        isSelected 
-                          ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.4)]' 
-                          : 'bg-muted dark:bg-zinc-900 text-muted-foreground dark:text-zinc-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 group-hover:scale-110'
-                      }`}>
+                      <div className={`p-2 rounded-xl transition-all ${isSelected
+                        ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.4)]'
+                        : 'bg-muted dark:bg-zinc-900 text-muted-foreground dark:text-zinc-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 group-hover:scale-110'
+                        }`}>
                         <Icon size={18} />
                       </div>
                     </div>
@@ -225,16 +215,6 @@ export function CognitiveCapabilities() {
                       </div>
                     </div>
 
-                    {/* Interactive Live Metric Callout */}
-                    <div className="mt-5 pt-3 border-t border-border/80 dark:border-zinc-800/80 flex items-center justify-between text-xs">
-                      <span className="text-muted-foreground font-mono text-[11px]">
-                        KPI: <span className="text-cyan-600 dark:text-cyan-400 font-semibold">{item.liveMetric}</span>
-                      </span>
-                      <span className="text-cyan-600 dark:text-cyan-400 text-xs font-semibold opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1">
-                        Inspect
-                        <ChevronRight size={12} />
-                      </span>
-                    </div>
 
                     {/* Subtle corner glow accent */}
                     <div className="absolute top-0 right-0 w-24 h-24 bg-cyan-500/5 rounded-full blur-2xl pointer-events-none group-hover:bg-cyan-500/10 transition-colors" />

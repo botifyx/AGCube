@@ -28,29 +28,23 @@ export default function ClassicWMS() {
                 <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-wider font-mono">
                   <span>Flagship Execution Engine</span>
                 </div>
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-amber-500/40 bg-amber-500/10 text-amber-700 dark:text-amber-300 text-xs font-semibold font-mono">
-                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
-                  <span>AWS Certified Solution</span>
-                </div>
               </div>
 
-              <div className="mb-6 flex items-center justify-center gap-4">
-                <div className="inline-flex items-center px-6 py-3.5 rounded-2xl bg-white shadow-xl shadow-orange-500/10 border border-orange-500/25">
-                  <img src="/classic-wms-logo.png" alt="Classic WMS" className="h-8 sm:h-9 w-auto object-contain" />
-                </div>
-                <img 
-                  src="/aws-qualified-software.png" 
-                  alt="AWS Qualified Software" 
-                  className="hidden sm:inline-block h-11 md:h-12 w-auto object-contain" 
-                />
-              </div>
 
               <h1 className="text-4xl md:text-6xl font-black tracking-tight text-foreground font-heading leading-[1.1]">
                 Classic <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 dark:from-orange-400 dark:to-amber-500">WMS</span>
               </h1>
-              <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mt-4 font-sans max-w-2xl mx-auto">
-                A modern, AI-native warehouse management system engineered for high-throughput fulfillment. Officially AWS Certified and built for 99.9% inventory precision.
-              </p>
+              <div className="space-y-4 text-base md:text-lg text-muted-foreground leading-relaxed mt-6 font-sans max-w-3xl mx-auto">
+                <p>
+                  Classic WMS is a modern and scalable Warehouse Management System (WMS) designed to optimize warehouse operations, improve inventory visibility, and enhance overall supply chain efficiency.
+                </p>
+                <p>
+                  The platform helps organizations manage the complete lifecycle of warehouse operations including receiving, storage, picking, packing, and dispatch with high accuracy and automation.
+                </p>
+                <p>
+                  Built with advanced technologies and industry best practices, Classic WMS enables businesses to streamline operations, reduce manual errors, and gain real-time control over inventory and warehouse workflows.
+                </p>
+              </div>
             </motion.div>
             <div className="flex flex-wrap justify-center gap-4">
               <Button asChild size="lg" className="bg-gradient-to-r from-orange-500 to-amber-600 hover:from-orange-600 hover:to-amber-700 text-white rounded-full px-8 shadow-lg shadow-orange-500/25 font-bold">
@@ -64,22 +58,12 @@ export default function ClassicWMS() {
         </div>
       </div>
 
-      {/* Capabilities of WMS Section */}
-      <div className="mb-8">
-        <WMSCapabilities />
-      </div>
-
       {/* Full-width Key Cognitive Capabilities Section (01 to 06) */}
-      <div className="mb-12">
+      <div className="mb-24">
         <CognitiveCapabilities />
       </div>
 
-      {/* Smarter Operations. Measurable ROI Section with AWS Certified Badge */}
-      <div className="mb-24">
-        <OperationsROI />
-      </div>
-
-      <div className="container mx-auto px-4 md:px-6">
+      <div className="container mx-auto px-4 md:px-6 mb-24">
         {/* Pricing/Comparison */}
         <div id="pricing" className="max-w-4xl mx-auto scroll-mt-32">
           <div className="text-center mb-12">
@@ -111,6 +95,16 @@ export default function ClassicWMS() {
             </Card>
           </div>
         </div>
+      </div>
+
+      {/* Smarter Operations. Measurable ROI Section */}
+      <div className="mb-24">
+        <OperationsROI />
+      </div>
+
+      {/* Capabilities of WMS Section */}
+      <div>
+        <WMSCapabilities />
       </div>
     </div>
   );
