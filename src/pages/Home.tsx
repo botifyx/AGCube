@@ -3,7 +3,6 @@ import { useSEO } from '@/hooks/useSEO';
 import { Hero } from '@/components/sections/Hero';
 import { WhyAGCube } from '@/components/sections/WhyAGCube';
 import { PracticeAreas } from '@/components/sections/PracticeAreas';
-import { WMSPreview } from '@/components/sections/WMSPreview';
 import { SupplyChainIntegration } from '@/components/sections/SupplyChainIntegration';
 import { Industries } from '@/components/sections/Industries';
 import { InsightsPreview } from '@/components/sections/InsightsPreview';
@@ -21,7 +20,6 @@ export default function Home() {
       <Hero />
       <WhyAGCube />
       <PracticeAreas />
-      <WMSPreview />
       <SupplyChainIntegration />
       <Industries />
       <InsightsPreview />

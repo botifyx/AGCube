@@ -8,7 +8,7 @@ import { useTheme } from '@/components/theme-provider';
 
 const navLinks = [
   { name: 'Advisory', href: '/advisory' },
-  { name: 'Classic WMS', href: '/classic-wms' },
+  { name: 'WMS', href: '/classic-wms' },
   { name: 'Supply Chain', href: '/supply-chain' },
   { name: 'Industries', href: '/industries' },
   { name: 'Insights', href: '/insights' },
@@ -58,10 +58,10 @@ export function Navbar() {
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-7">
           {navLinks.map((link) => {
-            const isClassic = link.name === 'Classic WMS';
+            const isWMS = link.name === 'WMS';
             const isActive = location.pathname === link.href;
 
-            if (isClassic) {
+            if (isWMS) {
               return (
                 <Link
                   key={link.name}
@@ -74,10 +74,7 @@ export function Navbar() {
                   )}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-                  <span>Classic WMS</span>
-                  <span className="text-[9px] px-1 py-0.2 rounded font-mono font-black uppercase bg-orange-500/20 text-orange-600 dark:text-orange-300">
-                    Flagship
-                  </span>
+                  <span>WMS</span>
                 </Link>
               );
             }
@@ -141,10 +138,10 @@ export function Navbar() {
           >
             <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navLinks.map((link) => {
-                const isClassic = link.name === 'Classic WMS';
+                const isWMS = link.name === 'WMS';
                 const isActive = location.pathname === link.href;
 
-                if (isClassic) {
+                if (isWMS) {
                   return (
                     <Link
                       key={link.name}
@@ -153,10 +150,7 @@ export function Navbar() {
                     >
                       <span className="flex items-center gap-2">
                         <span className="w-2 h-2 rounded-full bg-orange-400 animate-pulse" />
-                        <span>Classic WMS</span>
-                      </span>
-                      <span className="text-[10px] font-mono uppercase bg-orange-500/20 px-2 py-0.5 rounded font-bold">
-                        Flagship
+                        <span>WMS</span>
                       </span>
                     </Link>
                   );

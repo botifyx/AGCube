@@ -35,8 +35,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '01',
     title: 'AI Business Digital Twin',
     bullets: [
-      'Mirrors inventory, flow and resources in real time',
-      'Tests decisions before operational change'
+      'AI Business Digital Twin, which simulates warehouse scenarios and forecasts ROI, CapEx, OpEx, capacity utilization, throughput, and revenue impact before investment decisions are made.'
     ],
     icon: Network,
     statusTag: 'Dynamic Emulation',
@@ -47,8 +46,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '02',
     title: 'AI Zone Efficiency Engine',
     bullets: [
-      'Optimizes slotting, labor and travel by zone',
-      'Detects congestion and rebalances work'
+      'The AI Zone Efficiency Engine continuously identifies operational bottlenecks, inefficient warehouse zones, and productivity opportunities using real-time execution data.'
     ],
     icon: Activity,
     statusTag: 'Autonomous Slotting',
@@ -59,8 +57,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '03',
     title: 'AI Assistant',
     bullets: [
-      'Natural-language guidance for tasks and exceptions',
-      'Turns live data into faster decisions'
+      'The AI Assistant delivers intelligent operational insights and AI-driven recommendations through natural language, helping teams make faster and more informed decisions.'
     ],
     icon: Bot,
     statusTag: 'Conversational Ops',
@@ -71,8 +68,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '04',
     title: 'Command Center',
     bullets: [
-      'Unifies orders, resources, exceptions and KPIs',
-      'Real-time alerts with drill-down action'
+      'The Command Center provides a centralized executive view with real-time visibility into inventory, operations, workforce productivity, KPIs, and critical exceptions.'
     ],
     icon: LayoutDashboard,
     statusTag: 'Unified Telemetry',
@@ -83,8 +79,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '05',
     title: 'Automated Self-Healing',
     bullets: [
-      'Detects workflow and integration disruption',
-      'Guides recovery and reduces downtime'
+      'Automated Self-Healing detects operational anomalies and process deviations, proactively recommending or initiating corrective actions to help maintain uninterrupted performance.'
     ],
     icon: RefreshCw,
     statusTag: 'Fault Tolerance',
@@ -95,8 +90,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     num: '06',
     title: 'Indoor Asset Visibility',
     bullets: [
-      'Locates people, equipment and inventory indoors',
-      'Improves routing, safety and utilization'
+      'The Indoor Positioning System enables real-time location awareness of personnel, equipment, and assets, helping optimize task allocation, movement, and overall warehouse productivity.'
     ],
     icon: Crosshair,
     statusTag: 'RTLS & BLE Beacons',

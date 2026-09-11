@@ -3,16 +3,8 @@ import {
   Scan, 
   Zap, 
   Cpu, 
-  Layers, 
-  CheckCircle2, 
-  ShieldCheck, 
-  ArrowRight,
-  Cloud,
-  Award
+  Layers
 } from 'lucide-react';
-import { Link } from 'react-router-dom';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
 
 export function OperationsROI() {
   return (
@@ -153,44 +145,6 @@ export function OperationsROI() {
             </div>
 
           </div>
-        </motion.div>
-
-        {/* AWS Certified & AWS Qualified Software Partner Trust Banner */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-5xl mx-auto mt-8 p-6 sm:p-8 rounded-3xl bg-card/90 dark:bg-gradient-to-r dark:from-zinc-950/90 dark:via-zinc-900/80 dark:to-amber-950/20 border border-border dark:border-amber-500/30 backdrop-blur-xl shadow-lg flex flex-col md:flex-row items-center justify-between gap-6"
-        >
-          <div className="flex flex-col sm:flex-row items-center gap-5 text-center sm:text-left">
-            {/* Official AWS Qualified Software Badge Image - No white backdrop or border */}
-            <img
-              src="/aws-qualified-software.png"
-              alt="AWS Qualified Software"
-              className="h-16 sm:h-20 w-auto object-contain flex-shrink-0"
-            />
-            
-            <div className="space-y-1">
-              <div className="inline-flex items-center gap-2 px-3 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30 text-xs font-mono font-bold tracking-wider uppercase mb-1">
-                <ShieldCheck size={13} className="text-amber-500 dark:text-amber-400" />
-                <span>AWS Certified & Qualified Software</span>
-              </div>
-              <h4 className="text-base sm:text-lg font-bold text-foreground font-heading">
-                Classic WMS is an Officially AWS Certified Solution
-              </h4>
-              <p className="text-xs sm:text-sm text-muted-foreground max-w-xl font-sans leading-relaxed">
-                Audited against Amazon Web Services' stringent architectural and security pillars. Guarantees 99.99% uptime, SOC2-ready data isolation, and global low-latency replication.
-              </p>
-            </div>
-          </div>
-
-          <Button asChild className="bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold px-6 h-12 rounded-xl shadow-lg shadow-amber-500/20 whitespace-nowrap group">
-            <Link to="/contact">
-              Explore AWS Deployment
-              <ArrowRight size={16} className="ml-2 group-hover:translate-x-1 transition-transform" />
-            </Link>
-          </Button>
         </motion.div>
       </div>
     </section>
