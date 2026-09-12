@@ -24,7 +24,6 @@ interface CognitiveItem {
   title: string;
   bullets: string[];
   icon: typeof Network;
-  statusTag: string;
 }
 
 const cognitiveCapabilities: CognitiveItem[] = [
@@ -35,8 +34,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'AI Business Digital Twin, which simulates warehouse scenarios and forecasts ROI, CapEx, OpEx, capacity utilization, throughput, and revenue impact before investment decisions are made.'
     ],
-    icon: Network,
-    statusTag: 'Dynamic Emulation'
+    icon: Network
   },
   {
     id: 'zone-efficiency',
@@ -45,8 +43,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'The AI Zone Efficiency Engine continuously identifies operational bottlenecks, inefficient warehouse zones, and productivity opportunities using real-time execution data.'
     ],
-    icon: Activity,
-    statusTag: 'Autonomous Slotting'
+    icon: Activity
   },
   {
     id: 'ai-assistant',
@@ -55,8 +52,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'The AI Assistant delivers intelligent operational insights and AI-driven recommendations through natural language, helping teams make faster and more informed decisions.'
     ],
-    icon: Bot,
-    statusTag: 'Conversational Ops'
+    icon: Bot
   },
   {
     id: 'command-center',
@@ -65,8 +61,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'The Command Center provides a centralized executive view with real-time visibility into inventory, operations, workforce productivity, KPIs, and critical exceptions.'
     ],
-    icon: LayoutDashboard,
-    statusTag: 'Unified Telemetry'
+    icon: LayoutDashboard
   },
   {
     id: 'self-healing',
@@ -75,8 +70,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'Automated Self-Healing detects operational anomalies and process deviations, proactively recommending or initiating corrective actions to help maintain uninterrupted performance.'
     ],
-    icon: RefreshCw,
-    statusTag: 'Fault Tolerance'
+    icon: RefreshCw
   },
   {
     id: 'asset-visibility',
@@ -85,8 +79,7 @@ const cognitiveCapabilities: CognitiveItem[] = [
     bullets: [
       'The Indoor Positioning System enables real-time location awareness of personnel, equipment, and assets, helping optimize task allocation, movement, and overall warehouse productivity.'
     ],
-    icon: Crosshair,
-    statusTag: 'RTLS & BLE Beacons'
+    icon: Crosshair
   }
 ];
 
@@ -144,16 +137,6 @@ export function CognitiveCapabilities() {
                 </Button>
               </div>
 
-              {/* Live Telemetry Ping Box */}
-              <div className="mt-8 p-4 rounded-2xl bg-card/80 dark:bg-zinc-900/60 border border-border dark:border-cyan-500/20 backdrop-blur-md shadow-sm">
-                <div className="flex items-center gap-2 text-xs font-mono font-bold text-cyan-600 dark:text-cyan-400 mb-1">
-                  <span className="w-2 h-2 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-ping" />
-                  <span>Cognitive Core Status: Online</span>
-                </div>
-                <div className="text-[11px] text-muted-foreground">
-                  All 6 cognitive modules active with sub-second execution feedback.
-                </div>
-              </div>
             </motion.div>
           </div>
 
@@ -177,11 +160,8 @@ export function CognitiveCapabilities() {
                       : 'bg-card/70 dark:bg-zinc-950/60 border-border dark:border-zinc-800/80 hover:border-cyan-500/40 hover:bg-card dark:hover:bg-zinc-900/70 shadow-sm'
                       }`}
                   >
-                    {/* Top Status Bar with Module Tag */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-[10px] font-bold font-mono tracking-wider uppercase px-2.5 py-1 rounded-md bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20">
-                        {item.statusTag}
-                      </span>
+                    {/* Top Status Bar */}
+                    <div className="flex items-center justify-end mb-4">
                       <div className={`p-2 rounded-xl transition-all ${isSelected
                         ? 'bg-cyan-500/20 text-cyan-600 dark:text-cyan-300 shadow-[0_0_10px_rgba(34,211,238,0.4)]'
                         : 'bg-muted dark:bg-zinc-900 text-muted-foreground dark:text-zinc-400 group-hover:text-cyan-600 dark:group-hover:text-cyan-400 group-hover:scale-110'

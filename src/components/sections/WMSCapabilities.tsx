@@ -1,82 +1,51 @@
 import { motion } from 'motion/react';
-import { 
-  Layers, 
-  ScanLine, 
-  Sparkles, 
-  Radio
-} from 'lucide-react';
 
 interface WMSCapabilityItem {
   id: string;
   num: string;
-  badge: string;
   title: string;
   description: string;
-  icon: typeof Layers;
   accentBorder: string;
   accentGlow: string;
-  iconBg: string;
-  iconColor: string;
-  pillColor: string;
 }
 
 const capabilities: WMSCapabilityItem[] = [
   {
     id: 'unified-platform',
     num: '01',
-    badge: 'Execution Core',
     title: 'Unified Warehouse Management Platform',
     description:
       'Classic WMS provides a comprehensive platform to manage all warehouse processes such as inbound receipt, putaway, inventory control, order picking, packing, and shipment. The system supports multiple picking methodologies such as order-based, bin-based, and item-based picking, enabling faster and more accurate order fulfilment.',
-    icon: Layers,
     accentBorder: 'hover:border-orange-500/50 dark:hover:border-orange-500/40',
-    accentGlow: 'from-orange-500/10 via-amber-500/5 to-transparent',
-    iconBg: 'bg-orange-500/10',
-    iconColor: 'text-orange-600 dark:text-orange-400',
-    pillColor: 'border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400'
+    accentGlow: 'from-orange-500/10 via-amber-500/5 to-transparent'
   },
   {
     id: 'real-time-visibility',
     num: '02',
-    badge: 'Live Telemetry',
     title: 'Real-Time Inventory Visibility',
     description:
       'The platform delivers real-time inventory tracking and visibility across locations, bins, and warehouses. Businesses can monitor stock levels, movement history, and location details instantly, helping reduce stock discrepancies and improve operational control.',
-    icon: ScanLine,
     accentBorder: 'hover:border-amber-500/50 dark:hover:border-amber-500/40',
-    accentGlow: 'from-amber-500/10 via-orange-500/5 to-transparent',
-    iconBg: 'bg-amber-500/10',
-    iconColor: 'text-amber-600 dark:text-amber-400',
-    pillColor: 'border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400'
+    accentGlow: 'from-amber-500/10 via-orange-500/5 to-transparent'
   },
   {
     id: 'ai-ml-optimization',
     num: '03',
-    badge: 'Adaptive Intelligence',
     title: 'AI and Machine Learning Enabled Optimization',
     description:
       'Classic WMS integrates AI and Machine Learning capabilities to optimize warehouse operations. Intelligent algorithms help recommend the best putaway and picking strategies based on product movement, demand patterns, and warehouse layout. Predictive analytics also helps in better inventory planning and resource management.',
-    icon: Sparkles,
     accentBorder: 'hover:border-orange-500/50 dark:hover:border-orange-500/40',
-    accentGlow: 'from-orange-500/10 via-amber-500/5 to-transparent',
-    iconBg: 'bg-orange-500/10',
-    iconColor: 'text-orange-600 dark:text-orange-400',
-    pillColor: 'border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400'
+    accentGlow: 'from-orange-500/10 via-amber-500/5 to-transparent'
   },
   {
     id: 'iot-smart-warehouse',
     num: '04',
-    badge: 'Automated Operations',
     title: 'IoT Enabled Smart Warehouse',
     description:
       'The system supports integration with IoT devices such as sensors, RFID tags, and beacons to automate warehouse activities and enable real-time tracking of goods and operational conditions. This improves warehouse visibility, reduces manual intervention, and enhances overall productivity.',
-    icon: Radio,
     accentBorder: 'hover:border-amber-500/50 dark:hover:border-amber-500/40',
-    accentGlow: 'from-amber-500/10 via-orange-500/5 to-transparent',
-    iconBg: 'bg-amber-500/10',
-    iconColor: 'text-amber-600 dark:text-amber-400',
-    pillColor: 'border-amber-500/30 bg-amber-500/10 text-amber-600 dark:text-amber-400'
-  },
+    accentGlow: 'from-amber-500/10 via-orange-500/5 to-transparent'
+  }
 ];
 
 export function WMSCapabilities() {
@@ -118,8 +87,6 @@ export function WMSCapabilities() {
         {/* 2x2 Capabilities Matrix */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-6xl mx-auto">
           {capabilities.map((item, index) => {
-            const Icon = item.icon;
-
             return (
               <motion.div
                 key={item.id}
@@ -133,17 +100,8 @@ export function WMSCapabilities() {
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.accentGlow} opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none`} />
 
                 <div className="relative z-10 space-y-4">
-                  {/* Card Top: Icon, Badge & Number */}
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <div className={`w-12 h-12 rounded-2xl ${item.iconBg} ${item.iconColor} flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-sm`}>
-                        <Icon size={24} />
-                      </div>
-                      <span className={`text-[11px] font-mono font-bold uppercase tracking-wider px-2.5 py-1 rounded-full border ${item.pillColor}`}>
-                        {item.badge}
-                      </span>
-                    </div>
-
+                  {/* Card Top: Number */}
+                  <div className="flex items-center justify-end">
                     <span className="text-3xl sm:text-4xl font-black font-mono text-muted-foreground/20 dark:text-zinc-800 select-none group-hover:text-orange-500/30 transition-colors">
                       {item.num}
                     </span>
@@ -160,16 +118,6 @@ export function WMSCapabilities() {
                   </p>
                 </div>
 
-                {/* Bottom subtle accent line */}
-                <div className="relative z-10 pt-6 mt-6 border-t border-border/60 dark:border-zinc-800/60 flex items-center justify-between text-xs font-mono text-muted-foreground">
-                  <span className="flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full bg-orange-500" />
-                    <span>Enterprise Grade Module</span>
-                  </span>
-                  <span className="text-orange-600 dark:text-orange-400 font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
-                    Active Module
-                  </span>
-                </div>
               </motion.div>
             );
           })}
