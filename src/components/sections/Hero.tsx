@@ -2,11 +2,11 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  ChevronLeft, 
-  ChevronRight, 
-  Sparkles, 
+import {
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Sparkles,
   ArrowUpRight
 } from 'lucide-react';
 
@@ -58,14 +58,14 @@ export function Hero() {
   }, [isPaused, nextSlide]);
 
   return (
-    <section 
+    <section
       className="relative min-h-[92vh] flex flex-col justify-between overflow-hidden pt-28 pb-16 transition-colors duration-1000"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
       {/* Dynamic Background Glow according to active slide */}
       <div className="absolute inset-0 bg-grid opacity-20 pointer-events-none" />
-      
+
       {activeSlide === 0 ? (
         <>
           <div className="absolute top-1/4 -left-1/4 w-1/2 h-1/2 bg-blue-500/10 blur-[130px] rounded-full pointer-events-none transition-opacity duration-1000" />
@@ -84,11 +84,10 @@ export function Hero() {
         <div className="inline-flex items-center p-1.5 rounded-full bg-background/80 backdrop-blur-xl border border-border/70 shadow-2xl">
           <button
             onClick={() => goToSlide(0)}
-            className={`relative px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
-              activeSlide === 0 
-                ? 'text-white bg-blue-600 shadow-md shadow-blue-500/20' 
+            className={`relative px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${activeSlide === 0
+                ? 'text-white bg-blue-600 shadow-md shadow-blue-500/20'
                 : 'text-muted-foreground hover:text-foreground'
-            }`}
+              }`}
           >
             <span>01. Strategy & Advisory</span>
             {activeSlide === 0 && (
@@ -98,17 +97,13 @@ export function Hero() {
 
           <button
             onClick={() => goToSlide(1)}
-            className={`relative px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${
-              activeSlide === 1 
-                ? 'text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-md shadow-orange-500/30' 
+            className={`relative px-4 sm:px-6 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all duration-300 flex items-center gap-2 ${activeSlide === 1
+                ? 'text-white bg-gradient-to-r from-orange-500 to-amber-500 shadow-md shadow-orange-500/30'
                 : 'text-muted-foreground hover:text-foreground'
-            }`}
+              }`}
           >
             <Sparkles size={14} className={activeSlide === 1 ? 'text-amber-200' : 'text-orange-400'} />
             <span>02. Classic WMS</span>
-            <span className="text-[10px] px-1.5 py-0.5 rounded-md font-bold tracking-wider uppercase bg-black/20 text-white/90">
-              Flagship
-            </span>
           </button>
         </div>
       </div>
@@ -211,14 +206,14 @@ export function Hero() {
               {/* Decorative 3D Wireframe Cube */}
               <div className="relative w-full max-w-3xl h-32 mx-auto opacity-30 pointer-events-none">
                 <motion.div
-                  animate={{ 
+                  animate={{
                     rotateY: [0, 360],
                     rotateX: [0, 180, 0],
                   }}
-                  transition={{ 
-                    duration: 25, 
-                    repeat: Infinity, 
-                    ease: "linear" 
+                  transition={{
+                    duration: 25,
+                    repeat: Infinity,
+                    ease: "linear"
                   }}
                   className="w-24 h-24 border border-blue-500/30 mx-auto relative mt-2"
                   style={{ transformStyle: 'preserve-3d' }}
@@ -345,10 +340,9 @@ export function Hero() {
         <div className="flex flex-col items-center gap-3">
           {/* Progress track */}
           <div className="w-48 sm:w-64 h-1 bg-border/40 rounded-full overflow-hidden">
-            <div 
-              className={`h-full transition-all duration-75 ${
-                activeSlide === 0 ? 'bg-blue-500' : 'bg-gradient-to-r from-orange-500 to-amber-500'
-              }`}
+            <div
+              className={`h-full transition-all duration-75 ${activeSlide === 0 ? 'bg-blue-500' : 'bg-gradient-to-r from-orange-500 to-amber-500'
+                }`}
               style={{ width: `${progress}%` }}
             />
           </div>
@@ -357,16 +351,14 @@ export function Hero() {
           <div className="flex items-center gap-3">
             <button
               onClick={() => goToSlide(0)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeSlide === 0 ? 'w-8 bg-blue-500' : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60'
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${activeSlide === 0 ? 'w-8 bg-blue-500' : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60'
+                }`}
               aria-label="Go to Strategy Slide"
             />
             <button
               onClick={() => goToSlide(1)}
-              className={`h-2 rounded-full transition-all duration-300 ${
-                activeSlide === 1 ? 'w-8 bg-orange-500' : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60'
-              }`}
+              className={`h-2 rounded-full transition-all duration-300 ${activeSlide === 1 ? 'w-8 bg-orange-500' : 'w-2 bg-muted-foreground/30 hover:bg-muted-foreground/60'
+                }`}
               aria-label="Go to Classic WMS Slide"
             />
           </div>

@@ -24,12 +24,6 @@ export default function ClassicWMS() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
             >
-              <div className="flex flex-wrap items-center justify-center gap-3 mb-6">
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-semibold uppercase tracking-wider font-mono">
-                  <span>Flagship Execution Engine</span>
-                </div>
-              </div>
-
               <div className="mb-8 flex items-center justify-center">
                 <div className="inline-flex items-center justify-center px-8 py-5 rounded-2xl bg-white shadow-xl shadow-orange-500/10 border border-orange-500/25">
                   <img
