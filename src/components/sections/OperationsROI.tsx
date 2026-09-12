@@ -28,7 +28,7 @@ export function OperationsROI() {
             </h2>
             <div className="w-24 h-1 bg-cyan-500 dark:bg-cyan-400 mx-auto mt-4 rounded-full shadow-[0_0_12px_rgba(34,211,238,0.6)]" />
             <p className="text-muted-foreground text-base sm:text-lg mt-4 max-w-2xl mx-auto font-sans leading-relaxed">
-              Purpose-built for operational speed and zero margin of error. Classic WMS delivers concrete financial returns from day 30.
+              Purpose-built for operational speed and zero margin of error.
             </p>
           </motion.div>
         </div>

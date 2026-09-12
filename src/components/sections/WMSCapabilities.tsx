@@ -64,15 +64,11 @@ export function WMSCapabilities() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-600 dark:text-orange-400 text-xs font-mono font-bold tracking-wider uppercase mb-4 shadow-sm">
-              <span className="w-1.5 h-1.5 rounded-full bg-orange-500 animate-pulse" />
-              <span>Capabilities of WMS</span>
-            </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight text-foreground font-heading leading-[1.15]">
-              Capabilities of <br className="hidden sm:inline" />
+              Classic WMS: <br className="hidden sm:inline" />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-orange-600 dark:from-orange-400 dark:via-amber-400 dark:to-orange-500">
-                Classic WMS
+                Built for Speed, Accuracy, and Visibility
               </span>
             </h2>
 
